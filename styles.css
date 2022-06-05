@@ -1,0 +1,189 @@
+.backdrop{
+    background: #191414
+    
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    background-color: #1DB954 !important;
+    outline: none !important;
+    color: #191414 !important;
+    padding: 15px 50px !important;
+    margin: 0% 15% 0% 15%;
+    border-radius: 50px !important;
+    font-size: medium;
+    transition: all .2s !important;
+}
+
+.btn-disabled {
+    background-color: #9c9c9c !important;
+    outline: none !important;
+    color: #191414 !important;
+    padding: 15px 50px !important;
+    margin: 0% 15% 0% 15% ;
+    border-radius: 50px !important;
+    font-size: medium;
+    transition: all .2s !important;
+}
+
+.rbutton{
+    margin: 0% 15% 0% -10% !important;
+}
+
+#lbutton{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.navbar{
+    background-color: #1DB954 !important;
+    padding: 5px !important;
+    text-indent: 90%;
+    
+}
+
+.text{
+    color: #1DB954 !important;
+    margin: 0% 15% 5% 15%;
+    font-size: large;
+
+}
+
+#selected{
+    color: #1DB954 !important;
+    margin: 2% 15% 2% 15% !important;
+    font-size: large;
+}
+
+
+.btn-primary:hover{
+    background-color: #02ff5a !important;
+    transform: scale(1.15) !important;
+}
+
+.btn-primary:active{
+    transform: scale(0.85) !important;
+}
+
+.playdiv{
+    z-index: 1;
+    
+}
+
+.headings{
+    margin: auto;
+    text-align: center;
+    color: #1DB954;
+    margin: 7px;
+    padding-top: 2%;
+}
+
+.subheadings{
+    color: #1DB954;
+    margin: auto;
+    text-align: center;
+    padding: 7px;
+    padding-top: 2%;
+
+}
+
+.element{
+    
+}
+
+.card{
+    background-color: #1DB954 !important;
+    float: left;
+    border-color: #1DB954;
+    color: #191414;
+    padding: 7px;
+    margin: 7px;
+    text-align: center;
+    transition: transform .2s;
+    position: absolute;
+}
+
+.cardclicked{
+    transform: scale(0.75);
+    background-color: #1d9145 !important;
+    float: left;
+    border-color: #1DB954;
+    color: #191414;
+    border-width: 20px;
+    padding: 7px;
+    margin: 7px;
+    text-align: center;
+    transition: transform .2s;
+    position: absolute;
+
+}
+
+.cardclicked:hover{
+    transform: scale(0.90) !important;
+    z-index: 1;
+}
+
+.card:hover{
+    transform: scale(1.15);
+    z-index: 1;
+    background-color: #02ff5a !important;
+    padding-bottom: 21px !important;
+    
+
+}
+
+.card:hover .playdiv{display: block !important;}
+
+.playdiv:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+    
+}
+
+.scroller {
+    height:675px;
+    margin:0% 10% 0% 15%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    z-index: 1;
+}
+
+.scroller::-webkit-scrollbar-track{
+    border-radius: 10px !important;
+    background-color: transparent !important;
+}
+
+.scroller::-webkit-scrollbar-track-piece{
+    display:none;
+}
+
+.scroller::-webkit-scrollbar-thumb{
+    background: #1DB954;
+    height:30px;
+    border-radius: 5px;
+}
+
+.scroller::-webkit-scrollbar{
+    width: 0.7em;
+    background: #191414;
+}
+
+.artTable{
+    
+}
+
+.trow{
+    
+    
+    
+}

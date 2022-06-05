@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDK YET</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="app.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3622ff5761.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="onPageLoad()" class="backdrop" style="font-family: Montserrat;">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            Music Recommender
+        </a>
+    </nav>
+    <h1 class="headings">Set the Vibe. </h1>
+    <div id="fail" style="display: none;">
+        <h3 class="subheadings">LOGIN FAILED. SIGN IN AGAIN.</h3>
+        <div id="lbutton"><button onclick="auth()" class="btn btn-primary">LOG IN TO SPOTIFY </button></div>
+    </div>
+    <div id="appSection">
+
+        <h2 class="subheadings">Select your favorite Artists.</h2>
+
+        <div id="artSec"></div>
+        <div>
+            <p id="artText" class="text"></p>
+        </div>
+        <div><button onclick="nextSection()" id="nbutton" class="btn btn-primary">NEXT > </button></div>
+
+
+    </div>
+
+    <div id="nextSection" style="display: none;">
+        <h2 class="subheadings">Select your favorite Tracks.</h2>
+
+        <div id="trackSec"></div>
+        <div>
+            <p id="songText" class="text"></p>
+        </div>
+        <div>
+            <button onclick="showArtists()" id="nbutton" class="btn btn-primary">
+                < PREVIOUS</button>
+                    <button onclick="recSection()" id="checker" class="btn btn-primary rbutton">NEXT ></button>
+        </div>
+
+
+    </div>
+
+    <div id="recSection" style="display: none;">
+        <h2 class="subheadings">We have just what you're looking for.</h2>
+
+        <div id="recSec"></div>
+        <div>
+            <p id="space" class="text"></p>
+        </div>
+        <div>
+            <button onclick="nextSection()" id="nbutton" class="btn btn-primary">
+                < PREVIOUS</button>
+                    <button onclick="onPageLoad()" id="" class="btn btn-primary rbutton">
+                        < RESTART</button>
+                            <button onclick="createPlaylist()" id="playlist" class="btn btn-primary rbutton">
+                                CREATE PLAYLIST +</button>
+        </div>
+    </div>
+    <p class="text" id="selected">Selected: 0 / 5</p>
+    <p class="text" id="bottom">Choose any combination of 5 artists or songs.</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+</body>
