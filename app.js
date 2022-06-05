@@ -109,7 +109,7 @@ function callAuthorizationApi(body) {
 function handleAuthorizationResponse() {
     if (this.status == 200) {
         var data = JSON.parse(this.responseText);
-        console.log(data);
+
         var data = JSON.parse(this.responseText);
         if (data.access_token != undefined) {
             access_token = data.access_token;
@@ -122,14 +122,14 @@ function handleAuthorizationResponse() {
         onPageLoad();
     }
     else {
-        console.log(this.responseText);
+
         alert(this.responseText);
     }
 }
 
 function selectArtist(id) {
     var res = selectedArtists.indexOf(id);
-    console.log(selectedArtists.length, selectedSongs.length)
+
     if (res == -1) {
         selectedArtists.push(id)
         var newp = ''
@@ -140,7 +140,7 @@ function selectArtist(id) {
     }
     document.getElementById('selected').textContent = 'Selected: ' + (selectedArtists.length + selectedSongs.length) + ' / 5'
     disableButton();
-    console.log(selectedArtists);
+
 }
 
 function disableButton() {
@@ -167,7 +167,7 @@ function topArtists() {
     })
         .then(response => response.json()
         ).then(data => {
-            console.log(data);
+
             if (data['error']) {
                 document.getElementById("fail").style.display = 'block';
                 document.getElementById("appSection").style.display = 'none';
@@ -198,7 +198,7 @@ function topArtists() {
                 img.style = "width:250px;height:250px"
                 td.appendChild(img)
                 td.onclick = function () {
-                    console.log(td.classList)
+
                     if (td.classList.contains('cardclicked')) {
 
                         td.classList.remove('cardclicked')
@@ -228,7 +228,7 @@ function nextSection() {
 
     document.getElementById("appSection").style.display = 'none';
     document.getElementById("nextSection").style.display = 'block';
-    console.log(document.getElementById('trackSec').children)
+
     if (document.getElementById('trackSec').children.length == 0) {
         topSongs()
     }
@@ -264,7 +264,7 @@ function topSongs() {
     })
         .then(response => response.json()
         ).then(data => {
-            console.log(data['items']);
+
             let count = 1;
             var table = document.createElement('table');
             var section = document.createElement('article')
@@ -289,7 +289,7 @@ function topSongs() {
                 img.style = "width:250px;height:250px"
                 td.appendChild(img)
                 img.onclick = function () {
-                    console.log(td.classList)
+
                     if (td.classList.contains('cardclicked')) {
 
                         td.classList.remove('cardclicked')
@@ -303,7 +303,7 @@ function topSongs() {
                     selectSongs(item['id'])
                 };
                 var name = document.createElement('p')
-                console.log(item['artists'][0]['name'] + " - " + item['name'])
+
                 name.textContent = item['name'] + " - " + item['artists'][0]['name']
                 td.appendChild(name)
                 var play = document.createElement('div')
@@ -334,7 +334,7 @@ function topSongs() {
 function selectSongs(id) {
     var res = selectedSongs.indexOf(id);
 
-    console.log(res)
+
     if (res == -1) {
         selectedSongs.push(id)
     }
@@ -343,8 +343,7 @@ function selectSongs(id) {
     }
     document.getElementById('selected').textContent = 'Selected: ' + (selectedArtists.length + selectedSongs.length) + ' / 5'
     disableButton();
-    console.log(selectedArtists);
-    console.log(selectedSongs);
+
 }
 
 
@@ -357,7 +356,7 @@ function getParams() {
     // var min_energy = 1
     // var min_speechiness = 1
     count = 1
-    console.log(selectedSongs)
+
     return new Promise((resolve, reject) => {
         selectedSongs.forEach(item => {
             url = 'https://api.spotify.com/v1/audio-features/' + item;
@@ -368,35 +367,33 @@ function getParams() {
             })
                 .then(response => response.json()
                 ).then(data => {
-                    console.log(data);
-                    console.log(count);
-                    console.log(selectedSongs.length)
+
                     if (data['danceability'] < danceability) {
                         danceability = data['danceability'];
-                        console.log(danceability);
+
                     }
                     if (data['valence'] > max_valence) {
                         max_valence = data['valence'];
-                        console.log(max_valence);
+
                     }
                     if (data['valence'] < min_valence) {
                         min_valence = data['valence'];
-                        console.log(min_valence);
+
                     }
                     if (data['acousticness'] < min_acousticness) {
                         min_acousticness = data['acousticness'];
-                        console.log(min_acousticness);
+
                     }
                     if (data['energy'] < min_energy) {
                         min_energy = data['energy'];
-                        console.log(min_energy);
+
                     }
                     if (data['speechiness'] < min_speechiness) {
                         min_speechiness = data['speechiness'];
-                        console.log(min_speechiness);
+
                     }
                     if (count == selectSongs.length) {
-                        console.log("HELLOOO")
+
                         resolve(true)
                     }
                     count = count + 1
@@ -454,17 +451,17 @@ function getParams() {
 
 async function getRecs2() {
     var wait = await getParams()
-    console.log("PARAMS OBTAINED?")
+
     if (Math.abs(max_valence - min_valence) < 0.3) {
         max_valence = 1
-        console.log(max_valence)
+
     }
     var seed_artists = ""
     var seed_songs = ""
     if (selectedArtists.length == selectedSongs.length) {
         selectedSongs = selectedSongs.slice(0, selectedSongs.length - 1)
     }
-    console.log(selectedSongs)
+
     for (i = 0; i < selectedArtists.length; i++) {
         seed_artists += selectedArtists[i]
         if (i != selectedArtists.length - 1) {
@@ -477,9 +474,7 @@ async function getRecs2() {
             seed_songs += "%2C"
         }
     }
-    console.log(min_valence + "," + max_valence + "," + min_acousticness + "," + danceability + "," + min_energy + "," + min_speechiness)
-    console.log(seed_artists)
-    console.log(seed_songs)
+
     url = 'https://api.spotify.com/v1/recommendations?limit=100&seed_artists=' + seed_artists + "&seed_tracks=" + seed_songs + "&min_acousticness=" + min_acousticness + "&min_danceability=" + danceability + "&min_energy=" + min_energy + "&min_speechiness=" + min_speechiness + "&min_valence=" + min_valence + "&max_valence=" + max_valence;
     fetch(url, {
         headers: {
@@ -489,7 +484,7 @@ async function getRecs2() {
     })
         .then(response => response.json()
         ).then(data => {
-            console.log(data['tracks']);
+
             let count = 1;
             var table = document.createElement('table');
             var section = document.createElement('article')
@@ -518,7 +513,6 @@ async function getRecs2() {
                 td.onclick = function () {
                 };
                 var name = document.createElement('p')
-                console.log(item['artists'][0]['name'] + " - " + item['name'])
                 name.textContent = item['name'] + " - " + item['artists'][0]['name']
                 td.appendChild(name)
                 var play = document.createElement('div')
@@ -579,7 +573,7 @@ function newPlaylist(userID) {
             "name": "Music Recommender Playlist",
             "public": "false"
         }
-        console.log(body)
+
 
 
         url = "https://api.spotify.com/v1/users/" + userID + "/playlists"
@@ -608,7 +602,6 @@ async function createPlaylist() {
     var button = document.getElementById('playlist');
     button.textContent = "CREATED PLAYLIST "
     button.appendChild(tick)
-    console.log(button.classList)
     // var userID = await getID();
     // console.log(userID)
     // var playlistID = await newPlaylist(userID);
