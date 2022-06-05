@@ -1,4 +1,4 @@
-var redirect_uri = "https://m-faraz3110.github.io/loggedin.html";
+var redirect_uri = "https://m-faraz3110.github.io/loggedin";
 
 
 var access_token = null;
