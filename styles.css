@@ -47,8 +47,9 @@ img{
 
 .navbar{
     background-color: #1DB954 !important;
-    padding: 5px !important;
-    text-indent: 90%;
+    padding-top: 5px !important;
+    padding-left: 12% !important;
+    padding-right: 12% !important;
     
 }
 
@@ -85,7 +86,7 @@ img{
     text-align: center;
     color: #1DB954;
     margin: 7px;
-    padding-top: 2%;
+    padding: 2%;
 }
 
 .subheadings{
