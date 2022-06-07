@@ -144,6 +144,11 @@ img{
 }
 
 @media (hover: none){
+    .card:hover{
+    transform: none;
+    z-index: 1;
+
+}
     .cardclicked:hover{
         transform: none;
         z-index: 1;
