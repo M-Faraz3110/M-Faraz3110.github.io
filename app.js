@@ -1,4 +1,4 @@
-var redirect_uri = "https://m-faraz3110.github.io/loggedin";
+var redirect_uri = "http://127.0.0.1:5500/loggedin.html";
 
 
 var access_token = null;
@@ -379,10 +379,6 @@ function getParams() {
                 .then(response => response.json()
                 ).then(data => {
 
-                    if (data['danceability'] < danceability) {
-                        min_danceability = data['danceability'];
-
-                    }
                     if (data['valence'] < min_valence) {
                         min_valence = data['valence'];
 
@@ -393,10 +389,6 @@ function getParams() {
                     }
                     if (data['energy'] < min_energy) {
                         min_energy = data['energy'];
-
-                    }
-                    if (data['speechiness'] < min_speechiness) {
-                        min_speechiness = data['speechiness'];
 
                     }
                     if (count == selectSongs.length) {
@@ -482,7 +474,7 @@ async function getRecs2() {
         }
     }
 
-    url = 'https://api.spotify.com/v1/recommendations?limit=100&seed_artists=' + seed_artists + "&seed_tracks=" + seed_songs + "&min_acousticness=" + min_acousticness + "&min_danceability=" + min_danceability + "&min_energy=" + min_energy + "&min_speechiness=" + min_speechiness + "&min_valence=" + min_valence;
+    url = 'https://api.spotify.com/v1/recommendations?limit=100&seed_artists=' + seed_artists + "&seed_tracks=" + seed_songs + "&min_energy=" + min_energy + "&min_valence=" + min_valence;
     fetch(url, {
         headers: {
             'Authorization': `Bearer ${access_token
