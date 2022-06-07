@@ -245,11 +245,11 @@ function showArtists() {
 
 }
 
-function showTracks() {
-    document.getElementById("appSection").style.display = 'none';
-    document.getElementById("recSection").style.display = 'none';
-    document.getElementById("nextSection").style.display = 'block';
-}
+// function showTracks() {
+//     document.getElementById("appSection").style.display = 'none';
+//     document.getElementById("recSection").style.display = 'none';
+//     document.getElementById("nextSection").style.display = 'block';
+// }
 
 function recSection() {
 
