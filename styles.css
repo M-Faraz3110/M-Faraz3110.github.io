@@ -143,7 +143,7 @@ img{
 
 }
 
-.card.playdiv {display: 'none';}
+.card.playdiv {display: 'none' !important;}
 
 .card:hover .playdiv{display: 'block' !important;}
     
