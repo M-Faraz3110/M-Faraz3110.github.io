@@ -318,7 +318,7 @@ function topSongs() {
                 play.className = 'playdiv'
                 play_button.className = 'fa-regular fa-circle-play fa-xl'
                 play.appendChild(play_button)
-                play.style.display = 'none'
+                play.style.display = 'block'
                 play.onclick = function () {
                     play_button.style.display = 'none'
                     var embed = document.createElement('iframe')
@@ -527,6 +527,7 @@ async function getRecs2() {
                 play.className = 'playdiv'
                 play_button.className = 'fa-regular fa-circle-play fa-xl'
                 play.appendChild(play_button)
+                play.style.display = 'block'
                 play.onclick = function () {
                     play_button.style.display = 'none'
                     var embed = document.createElement('iframe')
