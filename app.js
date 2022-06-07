@@ -603,6 +603,7 @@ function newPlaylist(userID) {
 
 
         }).then(response => response.json()).then(data => {
+            console.log("CREATED")
             resolve(data['id'])
             return data['id']
         }).catch(e => console.log(e));
@@ -632,13 +633,12 @@ async function createPlaylist() {
         },
         body: JSON.stringify(playlistTracks)
 
-
     }).then(response => response.json()).then(data => {
-        console.log(data)
-
-
+        window.open('https://open.spotify.com/playlist/' + playlistID)
 
     }).catch(e => console.log(e));
+
+
 
 
 
