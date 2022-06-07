@@ -132,11 +132,10 @@ function selectArtist(id) {
 
     if (res == -1) {
         selectedArtists.push(id)
-        var newp = ''
 
     }
     else {
-        selectedArtists.splice(res)
+        selectedArtists = selectedArtists.slice(0, res).concat(selectedArtists.slice(res + 1));
     }
     document.getElementById('selected').textContent = 'Selected: ' + (selectedArtists.length + selectedSongs.length) + ' / 5'
     disableButton();
@@ -340,17 +339,17 @@ function topSongs() {
 
 function selectSongs(id) {
     var res = selectedSongs.indexOf(id);
-
+    console.log(res)
 
     if (res == -1) {
         selectedSongs.push(id)
     }
     else {
-        selectedSongs.splice(res)
+        selectedSongs = selectedSongs.slice(0, res).concat(selectedSongs.slice(res + 1));
     }
     document.getElementById('selected').textContent = 'Selected: ' + (selectedArtists.length + selectedSongs.length) + ' / 5'
     disableButton();
-
+    console.log(selectedSongs.length + selectedArtists.length)
 }
 
 
