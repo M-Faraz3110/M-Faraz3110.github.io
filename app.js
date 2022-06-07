@@ -623,6 +623,7 @@ async function createPlaylist() {
     var playlistID = await newPlaylist(userID);
     console.log(playlistID)
     console.log(playlistTracks)
+    console.log("HELLOOOO")
     url = "https://api.spotify.com/v1/playlists/" + playlistID + "/tracks"
     fetch(url, {
         method: 'POST',
