@@ -634,6 +634,7 @@ async function createPlaylist() {
         body: JSON.stringify(playlistTracks)
 
     }).then(response => response.json()).then(data => {
+        console.log("UPDATED")
         window.open('https://open.spotify.com/playlist/' + playlistID)
 
     }).catch(e => console.log(e));
