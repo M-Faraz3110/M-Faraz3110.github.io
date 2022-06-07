@@ -227,7 +227,7 @@ function topArtists() {
 function nextSection() {
 
     document.getElementById("appSection").style.display = 'none';
-    document.getElementById('recSection').style.display = 'none';
+    document.getElementById("recSection").style.display = 'none';
     document.getElementById("nextSection").style.display = 'block';
 
     if (document.getElementById('trackSec').children.length == 0) {
@@ -243,6 +243,12 @@ function showArtists() {
     document.getElementById("nextSection").style.display = 'none';
 
 
+}
+
+function showTracks() {
+    document.getElementById("appSection").style.display = 'none';
+    document.getElementById("recSection").style.display = 'none';
+    document.getElementById("nextSection").style.display = 'block';
 }
 
 function recSection() {
