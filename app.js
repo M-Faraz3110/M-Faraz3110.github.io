@@ -380,11 +380,7 @@ function getParams() {
                 ).then(data => {
 
                     if (data['danceability'] < danceability) {
-                        danceability = data['danceability'];
-
-                    }
-                    if (data['valence'] > max_valence) {
-                        max_valence = data['valence'];
+                        min_danceability = data['danceability'];
 
                     }
                     if (data['valence'] < min_valence) {
@@ -486,7 +482,7 @@ async function getRecs2() {
         }
     }
 
-    url = 'https://api.spotify.com/v1/recommendations?limit=100&seed_artists=' + seed_artists + "&seed_tracks=" + seed_songs + "&min_acousticness=" + min_acousticness + "&min_danceability=" + danceability + "&min_energy=" + min_energy + "&min_speechiness=" + min_speechiness + "&min_valence=" + min_valence + "&max_valence=" + max_valence;
+    url = 'https://api.spotify.com/v1/recommendations?limit=100&seed_artists=' + seed_artists + "&seed_tracks=" + seed_songs + "&min_acousticness=" + min_acousticness + "&min_danceability=" + min_danceability + "&min_energy=" + min_energy + "&min_speechiness=" + min_speechiness + "&min_valence=" + min_valence;
     fetch(url, {
         headers: {
             'Authorization': `Bearer ${access_token
