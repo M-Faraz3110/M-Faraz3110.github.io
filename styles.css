@@ -143,10 +143,10 @@ img{
 
 }
 
-.card:hover .playdiv{display: 'block';}
     
 }
 
+.card:hover .playdiv{display: 'block';}
 
 
 .playdiv:hover{
