@@ -145,12 +145,10 @@ img{
 
 .card.playdiv {display: 'none';}
 
-.card:hover .playdiv{display: block !important;}
+.card:hover .playdiv{display: 'block' !important;}
     
 }
 
-
-.card:hover .playdiv{display: block !important;}
 
 .playdiv:hover{
     cursor: pointer;
