@@ -126,7 +126,10 @@ img{
 
 }
 
-.cardclicked:hover{
+
+
+@media(hover: hover) and (pointer: fine) {
+    .cardclicked:hover{
     transform: scale(0.90) !important;
     z-index: 1;
 }
@@ -139,17 +142,7 @@ img{
     
 
 }
-
-@media (hover: none){
-    .card:hover{
-    transform: none;
-    z-index: 1;
-
-}
-    .cardclicked:hover{
-        transform: none;
-        z-index: 1;
-}
+    
 }
 
 .card:hover .playdiv{display: block !important;}
