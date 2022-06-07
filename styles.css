@@ -13,7 +13,9 @@ img{
     margin-right: auto;
 }
 
-
+.login{
+    margin: 0% 0% 0% 0% !important;
+}
 
 .btn-primary {
     background-color: #1DB954 !important;
