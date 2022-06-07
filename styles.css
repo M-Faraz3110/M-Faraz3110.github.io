@@ -145,6 +145,10 @@ img{
     
 }
 
+@media(hover: none){
+    .card.playdiv {display: 'block' !important;}
+}
+
 .card:hover .playdiv{display: block !important;}
 
 .playdiv:hover{
