@@ -142,12 +142,13 @@ img{
     
 
 }
+
+.card.playdiv {display: 'none';}
+
+.card:hover .playdiv{display: block !important;}
     
 }
 
-@media(hover: none){
-    .card.playdiv {display: 'block' !important;}
-}
 
 .card:hover .playdiv{display: block !important;}
 
