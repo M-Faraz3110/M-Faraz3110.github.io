@@ -98,9 +98,6 @@ img{
 
 }
 
-.element{
-    
-}
 
 .card{
     background-color: #1DB954 !important;
@@ -144,12 +141,12 @@ img{
 }
 
 @media (hover: none){
-    card:hover{
+    .card:hover{
     transform: none;
     z-index: 1;
 
 }
-    cardclicked:hover{
+    .cardclicked:hover{
         transform: none;
         z-index: 1;
 }
@@ -191,12 +188,3 @@ img{
     background: #191414;
 }
 
-.artTable{
-    
-}
-
-.trow{
-    
-    
-    
-}
