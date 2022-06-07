@@ -228,6 +228,7 @@ function nextSection() {
     document.getElementById("appSection").style.display = 'none';
     document.getElementById("recSection").style.display = 'none';
     document.getElementById("nextSection").style.display = 'block';
+    disableButton();
 
     if (document.getElementById('trackSec').children.length == 0) {
         topSongs()
