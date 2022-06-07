@@ -1,4 +1,4 @@
-var redirect_uri = "http://127.0.0.1:5500/loggedin.html";
+var redirect_uri = "https://m-faraz3110.github.io/loggedin";
 
 
 var access_token = null;
