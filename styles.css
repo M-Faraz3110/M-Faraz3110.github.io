@@ -13,6 +13,18 @@ img{
     margin-right: auto;
 }
 
+#login {
+    background-color: #1DB954 !important;
+    outline: none !important;
+    color: #191414 !important;
+    padding: 15px 50px !important;
+    margin: auto !important;
+    border-radius: 50px !important;
+    font-size: medium;
+    transition: all .2s !important;
+
+}
+
 .btn-primary {
     background-color: #1DB954 !important;
     outline: none !important;
