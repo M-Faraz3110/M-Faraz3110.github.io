@@ -143,10 +143,15 @@ img{
 
 }
 
-.playdiv {display: 'none' !important;}
 
-.card:hover .playdiv{display: 'block' !important;}
     
+}
+
+@media (pointer: fine){
+    .playdiv {display: 'none' !important;}
+
+    .card:hover .playdiv{display: 'block' !important;}
+
 }
 
 
