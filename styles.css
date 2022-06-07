@@ -143,6 +143,13 @@ img{
 
 }
 
+@media (hover: none){
+    .cardclicked:hover{
+        transform: none;
+        z-index: 1;
+}
+}
+
 .card:hover .playdiv{display: block !important;}
 
 .playdiv:hover{
