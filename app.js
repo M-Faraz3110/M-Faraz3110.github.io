@@ -617,28 +617,28 @@ async function createPlaylist() {
     var button = document.getElementById('playlist');
     button.textContent = "CREATED PLAYLIST "
     button.appendChild(tick)
-    // var userID = await getID();
-    // console.log(userID)
-    // var playlistID = await newPlaylist(userID);
-    // console.log(playlistID)
-    // console.log(playlistTracks)
-    // url = "https://api.spotify.com/v1/playlists/" + playlistID + "/tracks"
-    // fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Authorization': `Bearer ${access_token
-    //             }`
-    //     },
-    //     body: JSON.stringify(playlistTracks)
+    var userID = await getID();
+    console.log(userID)
+    var playlistID = await newPlaylist(userID);
+    console.log(playlistID)
+    console.log(playlistTracks)
+    url = "https://api.spotify.com/v1/playlists/" + playlistID + "/tracks"
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${access_token
+                }`
+        },
+        body: JSON.stringify(playlistTracks)
 
 
-    // }).then(response => response.json()).then(data => {
-    //     console.log(data)
+    }).then(response => response.json()).then(data => {
+        console.log(data)
 
 
 
-    // }).catch(e => console.log(e));
+    }).catch(e => console.log(e));
 
 
 
