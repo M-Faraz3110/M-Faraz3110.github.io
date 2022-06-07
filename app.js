@@ -252,12 +252,12 @@ function showTracks() {
 }
 
 function recSection() {
-    if (selectedArtists.length + selectedSongs.length > 1) {
-        document.getElementById("appSection").style.display = 'none';
-        document.getElementById("nextSection").style.display = 'none';
-        document.getElementById("recSection").style.display = 'block';
-        getRecs2()
-    }
+
+    document.getElementById("appSection").style.display = 'none';
+    document.getElementById("nextSection").style.display = 'none';
+    document.getElementById("recSection").style.display = 'block';
+    getRecs2()
+
 
 }
 
