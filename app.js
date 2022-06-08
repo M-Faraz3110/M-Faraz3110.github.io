@@ -8,11 +8,7 @@ var selectedArtists = []
 var selectedSongs = []
 
 var min_valence = 1
-var max_valence = 0
-var min_acousticness = 1
-var danceability = 1
 var min_energy = 1
-var min_speechiness = 1
 
 var ArtistsText = []
 var TracksText = []
@@ -398,10 +394,12 @@ function getParams() {
                     count = count + 1
 
 
-                }).catch(e => console.log(e));
+                }).catch(e => resolve(false));
 
 
-        })
+        }
+
+        )
 
 
 
@@ -449,17 +447,23 @@ function getParams() {
 // }
 
 async function getRecs2() {
-    var wait = await getParams()
-
+    if (selectedSongs.length != 0) {
+        console.log("HERE")
+        var wait = await getParams()
+    }
+    else {
+        console.log("NA HERE")
+        min_valence = 0
+        min_energy = 0
+    }
+    console.log("HMMM")
     if (Math.abs(max_valence - min_valence) < 0.3) {
         max_valence = 1
 
     }
     var seed_artists = ""
     var seed_songs = ""
-    if (selectedArtists.length == selectedSongs.length) {
-        selectedSongs = selectedSongs.slice(0, selectedSongs.length - 1)
-    }
+
 
     for (i = 0; i < selectedArtists.length; i++) {
         seed_artists += selectedArtists[i]
