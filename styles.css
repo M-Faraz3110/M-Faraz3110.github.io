@@ -41,11 +41,17 @@ img{
     margin: 0% 15% 0% 5%;
 }
 
-#lbutton{
+#lbutton {
     display: flex;
     justify-content: center !important;
-    
+    align-items: center; /* Center vertically */
 }
+
+#lbutton button {
+    margin: 0;
+    padding: 0;
+}
+
 
 .navbar{
     background-color: #1DB954 !important;
