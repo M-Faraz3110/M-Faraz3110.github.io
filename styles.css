@@ -41,6 +41,10 @@ img{
     margin: 0% 15% 0% 5%;
 }
 
+.pbutton{
+    margin: 5% 15% 0% 5%;
+}
+
 #lbutton {
     display: flex;
     justify-content: center !important;
