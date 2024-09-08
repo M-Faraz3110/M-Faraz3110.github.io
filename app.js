@@ -178,6 +178,8 @@ function topArtists() {
             table.className = "artTable";
             var tr = document.createElement('tr');
             tr.className = "trow"
+            console.log("HEREREEEE")
+            console.log(data)
             data['items'].forEach(item => {
 
                 if (count > 5) {
@@ -189,7 +191,11 @@ function topArtists() {
                 var td = document.createElement('td')
                 td.className = "card"
                 var img = document.createElement('img')
-                img.src = item['images'][1]['url']
+                try {
+                    img.src = item['images'][1]['url']
+                } catch {
+                    
+                }
                 img.style = "width:250px;height:250px"
                 td.appendChild(img)
                 td.onclick = function () {
