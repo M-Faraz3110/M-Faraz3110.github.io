@@ -264,7 +264,7 @@ function recSection() {
 }
 
 function topSongs() {
-    url = "	https://api.spotify.com/v1/me/top/tracks?limit=100";
+    url = "	https://api.spotify.com/v1/me/top/tracks?limit=50";
     fetch(url, {
         headers: {
             'Authorization': `Bearer ${access_token
