@@ -194,7 +194,7 @@ function topArtists() {
                 try {
                     img.src = item['images'][1]['url']
                 } catch {
-                    
+                    return
                 }
                 img.style = "width:250px;height:250px"
                 td.appendChild(img)
