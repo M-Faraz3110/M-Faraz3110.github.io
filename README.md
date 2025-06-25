@@ -1,0 +1,1 @@
+Web Application to create a Spotify playlist based on a selection of artists, songs and albums. The FE works but I just don't want to pay extra money constantly to allow this thing to have public access.... :/
